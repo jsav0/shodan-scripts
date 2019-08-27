@@ -1,8 +1,8 @@
-
+#!/usr/bin/python3
 import shodan
 
 SHODAN_API_KEY = ""
-query = "Hipcam"
+query = "Hipcam RealServer/V1.0"
 
 api = shodan.Shodan(SHODAN_API_KEY)
 
@@ -13,8 +13,7 @@ try:
     # show the results
     print('Results found: {}'.format(results['total']))
     for result in results['matches']:
-        print('IP: {}'.format(result['ip_str']))
-        print(result['data'])
-        print('')
+        print('{}'.format(result['ip_str']))
 except Exception as e:
     print('Error: {}'.format(e))
+
